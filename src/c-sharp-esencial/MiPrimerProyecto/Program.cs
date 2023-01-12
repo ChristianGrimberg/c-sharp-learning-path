@@ -13,7 +13,11 @@ class Program
         Console.WriteLine("Probando mi primer proyecto");
         #endregion
 
-        int num = 10; // Variable de ejemplo
+        string? nombre;
+
+        Console.WriteLine("Ingrese su nombre:");
+        nombre = Console.ReadLine();
+        Console.WriteLine("Tu nombre es: {0}", nombre);
 
         Console.ReadKey();
     }
