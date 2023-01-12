@@ -14,10 +14,10 @@ class Program
         #endregion
 
         #region Variables
-        string? nombre;
+        string? nombre = "Christian";
 
         Console.WriteLine("Ingrese su nombre:");
-        nombre = Console.ReadLine();
+        //nombre = Console.ReadLine();
         Console.WriteLine("Tu nombre es: {0}", nombre);
         #endregion
 
@@ -42,8 +42,39 @@ class Program
 
         Console.WriteLine("val {0}", val);
         Console.WriteLine("nuevoVal {0}", nuevoVal);
+
+        Coordenadas coordA = new Coordenadas();
+        coordA.x = 1;
+        coordA.y = 50;
+
+        Coordenadas coordB = coordA;
+        Console.WriteLine("coordB.x {0}", coordB.x);
+        Console.WriteLine("coordB.y {0}", coordB.y);
+
+        coordA.x = 100;
+        Console.WriteLine("coordB.x {0}", coordB.x);
+        Console.WriteLine("coordB.y {0}", coordB.y);
+
+        int miNum = 10;
+        AddTen(ref miNum);
+        Console.WriteLine("miNum {0}", miNum);
+        #endregion
+
+        #region Constantes e identificadores
+        const int HORAS_DIA = 24;
+        //HORAS_DIA = 80;
+        #endregion
+
+        #region Valores nulos
+        bool? miSegundaBandera = null;
+        int? miNumero = null;
         #endregion
 
         Console.ReadKey();
+    }
+
+    static void AddTen(ref int number)
+    {
+        number += 10;
     }
 }
