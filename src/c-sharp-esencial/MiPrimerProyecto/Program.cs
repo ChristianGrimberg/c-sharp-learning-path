@@ -70,7 +70,11 @@ class Program
         int? miNumero = null;
         #endregion
 
-        Console.ReadKey();
+        #region Enumeradores
+        Console.WriteLine("Mes actual {0}", eMeses.Enero.ToString());
+        #endregion
+
+        Console.Read();
     }
 
     static void AddTen(ref int number)
