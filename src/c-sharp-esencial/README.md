@@ -18,7 +18,7 @@
 	```bash
 	dotnet sln ./src/c-sharp-esencial/c-sharp-esencial.sln add ./src/c-sharp-esencial/MiPrimerProyecto/MiPrimerProyecto.csproj
 	```
-1. Restaurar, compilar y probar la solución:
+1. Restaurar, compilar y probar el proyecto:
 	```bash
 	dotnet restore ./src/c-sharp-esencial/c-sharp-esencial.sln
 	dotnet build ./src/c-sharp-esencial/c-sharp-esencial.sln --no-restore
