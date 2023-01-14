@@ -74,6 +74,41 @@ class Program
         Console.WriteLine("Mes actual {0}", eMeses.Enero.ToString());
         #endregion
 
+        #region Tipos anonimos
+        var location = new { Pais = "Austria", Ciudad = "Graz"};
+        //location.Pais = "Argentina";
+
+        Console.WriteLine("Pais {0}, Ciudad {1}", location.Pais, location.Ciudad);
+
+        var locationB = new { Pais = "Argentina", Ciudad = "Avellaneda"};
+        var cliente = new
+        {
+            Nombre = "Christian",
+            Apellido = "Grimberg",
+            Locacion = location
+        };
+        var clientes = new[]
+        {
+            new { Nombre = "Clara", Apellido = "Castro", Locacion = locationB },
+            new { Nombre = "Raul", Apellido = "Noel", Locacion = location },
+            cliente
+        };
+
+        foreach (var item in clientes)
+        {
+            Console.WriteLine("Cliente {0} {1}, Pais {2} - Ciudad {3}", item.Nombre, item.Apellido, item.Locacion.Pais, item.Locacion.Ciudad);
+        }
+        #endregion
+
+        #region Tuplas
+        var proveedor = (Nombre: "Alberto", Apellido: "Perez");
+        Console.WriteLine($"Proveedor: {proveedor.Nombre}, {proveedor.Apellido}");
+
+        (string Nombre, string Apellido) proveedorB = (Nombre: "Christian", Apellido: "Grimberg");
+        proveedorB.Nombre = "Bruno";
+        Console.WriteLine($"Proveedor: {proveedorB.Nombre}, {proveedorB.Apellido}");
+        #endregion
+
         Console.Read();
     }
 
