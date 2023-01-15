@@ -109,6 +109,32 @@ class Program
         Console.WriteLine($"Proveedor: {proveedorB.Nombre}, {proveedorB.Apellido}");
         #endregion
 
+        #region Operadores matematicos
+        const int miConstante = 10;
+        int num;
+        Console.Write("Ingrese un numero distinto de cero: ");
+        string? valor = Console.ReadLine();
+
+        if(!System.String.IsNullOrWhiteSpace(valor)
+        && int.TryParse(valor, out num)
+        && num != 0)
+        {
+            Console.WriteLine($"Valor ingresado: {num}");
+            int suma = miConstante + num;
+            Console.WriteLine($"Suma = {suma}");
+            int resta = miConstante - num;
+            Console.WriteLine($"Resta = {resta}");
+            int multiplicacion = miConstante * num;
+            Console.WriteLine($"Multiplicacion = {multiplicacion}");
+            float division = miConstante / num;
+            Console.WriteLine($"Division = {division}");
+        }
+        else
+        {
+            Console.WriteLine("El valor ingresado no es valido");
+        }
+        #endregion
+
         Console.Read();
     }
 
