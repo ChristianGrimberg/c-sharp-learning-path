@@ -111,13 +111,9 @@ class Program
 
         #region Operadores matematicos
         const int miConstante = 10;
-        int num;
-        Console.Write("Ingrese un numero distinto de cero: ");
-        string? valor = Console.ReadLine();
+        int num = RequestIntegerNumber("Ingrese un numero entero distinto de cero");
 
-        if(!System.String.IsNullOrWhiteSpace(valor)
-        && int.TryParse(valor, out num)
-        && num != 0)
+        if(num != 0)
         {
             Console.WriteLine($"Valor ingresado: {num}");
             int suma = miConstante + num;
@@ -135,11 +131,49 @@ class Program
         }
         #endregion
 
+        #region Operadores de asignacion
+        int num2 = RequestIntegerNumber("Ingrese otro numero entero");
+
+        if(num2 != 0)
+        {
+            int nuevaSuma = 0;
+            nuevaSuma += miConstante;
+            nuevaSuma += num2;
+            Console.WriteLine($"Nueva suma = {nuevaSuma}");
+
+            int nuevaResta = 0;
+            nuevaResta -= num2;
+            Console.WriteLine($"Nueva resta = {nuevaResta}");
+        }
+        #endregion
+
         Console.Read();
     }
 
     static void AddTen(ref int number)
     {
         number += 10;
+    }
+
+    static int RequestIntegerNumber(string message)
+    {
+        int numero;
+        string? valor = null;
+
+        if(!string.IsNullOrWhiteSpace(message))
+        {
+            Console.Write($"{message}: ");
+            valor = Console.ReadLine();
+        }
+
+        if(!System.String.IsNullOrWhiteSpace(valor)
+        && int.TryParse(valor, out numero))
+        {
+            return numero;
+        }
+        else
+        {
+            return 0;
+        }
     }
 }
